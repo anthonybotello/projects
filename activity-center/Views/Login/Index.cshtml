@@ -4,12 +4,16 @@
 <link rel="stylesheet" href="~/css/Login.css" />
 
 <div class="header">
-    <h1 class="display-4 text-center pb-5">Welcome to the Dojo Activity Center!</h1>
+    <h1 class="display-4 text-center pb-5">Welcome to the Activity Center!</h1>
 </div>
 
 <div class="text-center">
 
     <partial name="RegisterPartial"/>
     <partial name="LoginPartial"/>
+
+    <form asp-controller="Login" asp-action="Guest" class="form-signin d-inline-block align-middle ml-5" method="post" novalidate>
+        <button class="btn btn-lg btn-secondary btn-block" type="submit">Log in as guest</button>
+    </form>
 
 </div>

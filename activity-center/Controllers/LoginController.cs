@@ -100,6 +100,13 @@ namespace Belt_Exam.Controllers
             }
         }
 
+        [HttpPost("guest")]
+        public IActionResult Guest(){
+            User guest = dbContext.Users.FirstOrDefault(user => user.Email == "guest@email.com");
+            HttpContext.Session.SetObjectAsJson("CurrentUser",guest);
+            return RedirectToAction("Success");
+        }
+
         [HttpGet("success")]
         public IActionResult Success()
         {

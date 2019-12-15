@@ -1,0 +1,25 @@
+<h3>Reviews for {{restaurant.name}}</h3>
+<button class="btn btn-primary mb-2" [routerLink]="['review']">New Review</button>
+<div>
+    <div class="d-inline-block align-top mr-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Customer</th>
+                    <th scope="col">Rating</th>
+                    <th scope="col">Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let review of restaurant.reviews">
+                    <th scope="row">{{review.name}}</th>
+                    <td>{{review.stars}}</td>
+                    <td>{{review.content}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="d-inline-block align-top">
+        <router-outlet></router-outlet>
+    </div>
+</div>

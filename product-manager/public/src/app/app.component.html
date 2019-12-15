@@ -1,0 +1,19 @@
+<div class="container mx-auto mt-3">
+  <div class="text-center">
+    <h1 class="display-5">Product Manager</h1>
+    <div class="btn-group btn-group-toggle mt-2" ngbRadioGroup name="radioBasic">
+      <label ngbButtonLabel class="btn-outline-primary">
+          <input ngbButton type="radio" value="home" [routerLink]="['/']">Home
+      </label>
+      <label ngbButtonLabel class="btn-outline-primary">
+        <input ngbButton type="radio" value="mine" [routerLink]="['/products']">Product List
+      </label>
+      <label ngbButtonLabel class="btn-outline-primary">
+        <input ngbButton type="radio" value="buy" [routerLink]="['/products/new']">New Product
+      </label>
+    </div>
+  </div>
+  <div class="comp-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

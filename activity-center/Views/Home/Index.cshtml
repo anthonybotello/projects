@@ -1,0 +1,91 @@
+@model IEnumerable<Belt_Exam.Models.DojoActivity>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date) and 
+                @Html.DisplayNameFor(model => model.Time)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DurationValue)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Coordinator)
+            </th>
+            <th>
+                No. of Participants
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.DojoActivityId">@Html.DisplayFor(modelItem => item.Title)</a>
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date) @@ @Html.DisplayFor(modelItem => item.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DurationValue) @Html.DisplayFor(modelItem => item.DurationUnit) 
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Coordinator.Name)
+            </td>
+            <td>
+                @if(item.Participants == null)
+                {
+                    <p>0</p>
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.Participants.Count)
+                }
+            </td>
+            <td>
+                @if(ViewBag.User.UserId == item.UserId)
+                {
+                    <a asp-action="Delete" asp-route-id="@item.DojoActivityId">Delete</a>
+                }
+                else
+                {
+                    bool joined = false;
+                    int eventId = -1;
+                    @foreach(var p in item.Participants)
+                    {
+                        @if(ViewBag.User.UserId == p.UserId)
+                        {
+                            joined = true;
+                            eventId = p.ParticipationId;
+                            break;
+                        }
+                    }
+                    @if(joined)
+                    {
+                        <a asp-action="Leave" asp-route-id="@eventId">Leave</a>
+                    }
+                    else
+                    {
+                        <a href="/Join/@ViewBag.User.UserId/@item.DojoActivityId">Join</a>
+                    }
+                }
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<p class="text-right">
+    <a asp-action="Create" class="btn btn-primary">Add New Activity</a>
+</p>

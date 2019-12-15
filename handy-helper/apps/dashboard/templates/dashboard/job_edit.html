@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Edit Job</title>
+    
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'login/css/bootstrap.css' %}">
+    <link rel='stylesheet' href="{% static 'dashboard/css/style.css' %}">
+</head>
+
+<body>
+    <div class="container">
+        
+            <header class="blog-header py-3">
+                    <div class="row flex-nowrap justify-content-between align-items-center">
+                    <div class="col-4" id="head-width">
+                        <a class="blog-header-logo text-dark" href="{% url 'login:dashboard' %}">Handy Helper</a>
+                    </div>
+                    <div class="col-4 d-flex justify-content-end align-items-center">
+                        <div class="mr-2"><p class="pt-3">Hello, {{first_name}}!</p></div>
+                        <a class="btn btn-sm btn-primary p-1" href="{% url 'login:logout' %}">Log Out</a>
+                    </div>
+                    </div>
+                </header>
+
+        <form action="{% url 'jobs:create' %}" class="form-courses form-width border border-secondary mt-3" method="POST">
+        {% csrf_token %}
+            <input type="hidden" name="request_type" value="update">
+            <input type="hidden" name="job_id" value="{{job.id}}">
+            <div class="form-group p-2 m-0">
+                <h1 class="h3 mb-3 font-weight-normal mt-3">Let's edit your job!</h1>
+
+                <div class="invalid-feedback" id="errors">
+                    {% if messages %}
+                    <ul class="messages">
+                        {% for message in messages %}
+                            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+
+                <label for="exampleFormControlInput1" class="sr-only"><h5>Title</h5></label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="title" value="{{job.title}}">
+            </div>
+
+            <div class="form-group p-2 m-0">
+                <label for="exampleFormControlTextarea1" class="sr-only"><h5>Job description</h5></label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="description">{{job.description}}</textarea>
+            </div>
+
+            <div class="form-group p-2 m-0">
+                <label for="exampleFormControlInput1" class="sr-only"><h5>Location</h5></label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" name="location" value="{{job.location}}">
+            </div>
+
+            <div class="form-group text-right p-2 m-0">
+                <a class="btn btn-danger" href="{% url 'login:dashboard' %}">Cancel</a>
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

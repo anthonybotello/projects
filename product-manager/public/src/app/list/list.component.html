@@ -1,0 +1,12 @@
+<div class="product-list h-100 overflow-auto">
+    <h3>Product List</h3>
+    <div class="product text-center" *ngFor="let product of products">
+        <img [src]="product.image">
+        <h6>{{product.name}}</h6>
+        <h6>${{priceDisplay(product.price)}}</h6>
+        <div class="my-1">
+            <button class="btn btn-primary mr-1" [routerLink]="['edit', product._id]">Edit</button>
+            <button class="btn btn-danger" (click)="deleteProduct(product._id)">Delete</button>
+        </div>
+    </div>
+</div>

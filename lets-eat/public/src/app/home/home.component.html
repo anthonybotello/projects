@@ -1,0 +1,28 @@
+<button class="btn btn-primary mb-2" [routerLink]="['new']">New Restaurant</button>
+<div>
+    <div class="d-inline-block align-top mr-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Restaurant</th>
+                    <th scope="col">Cuisine</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let res of restaurants">
+                    <th scope="row">{{res.name}}</th>
+                    <td>{{res.cuisine}}</td>
+                    <td>
+                        <button class="btn btn-primary" [routerLink]="[res._id]">Reviews</button>
+                        <button class="btn btn-secondary mx-1" [routerLink]="[res._id + '/edit']">Update</button>
+                        <button class="btn btn-danger" (click)="deleteRes(res._id)" *ngIf="!overThirty(res.createdAt)">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="d-inline-block align-top">
+        <router-outlet></router-outlet>
+    </div>
+</div>

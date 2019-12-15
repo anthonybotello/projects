@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Jack Black</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"\>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    <script src="deck_of_cards.js"></script>
+    <script>
+        $(document).ready(function(){
+            const bjDeck = new Deck();
+            const dealer = new Player("Dealer");
+            const player = new Player("Player");
+            function Game(){
+                //START GAME, CLEAR ALL VARIABLES//
+                dealer.hand = [];
+                player.hand = [];
+                var dCards = [];
+                var pCards = [];
+                var dHand = "";
+                var pHand = "";
+                var dVal = 0;
+                var pVal = 0;
+                var dAce = false;
+                var pAce = false;
+
+                function sumValues(dhand,phand){
+                        if(dealer.hand[0].value > 10){
+                            dVal += 10;
+                        }
+                        else if(dealer.hand[0].value ===1){
+                            dAce = true;
+                            dVal = "1 or 11";
+                        }
+                        else{
+                            dVal += dealer.hand[0].value;
+                        }
+                    phand.forEach(card => {
+                        if(card.value > 10){
+                            pVal += 10;
+                        }
+                        else{
+                            pVal += card.value;
+                        }
+                    });
+                }
+
+                //DEAL INITIAL HAND//
+                bjDeck.reset().shuffle();
+                dealer.takeCard(bjDeck).takeCard(bjDeck);
+                player.takeCard(bjDeck).takeCard(bjDeck);
+                dCards.push(`<img src=\"cards/${dealer.hand[0].suit[0].toLowerCase() + dealer.hand[0].value}.png\">`);
+                dCards.push('<img src=\"cards/b1fv.png\">');
+                pCards = [`<img src=\"cards/${player.hand[0].suit[0].toLowerCase() + player.hand[0].value}.png\">`,`<img src=\"cards/${player.hand[1].suit[0].toLowerCase() + player.hand[1].value}.png\">`];
+                dCards.forEach(card => {
+                    dHand += card;
+                });
+                pCards.forEach(card => {
+                    pHand += card;
+                });
+                sumValues(dealer.hand,player.hand);
+                player.hand.forEach(card => {
+                    if(card.value === 1){
+                        pAce = true;
+                    }
+                });
+                if(pAce){
+                    if((pVal + 10) < 21){
+                            $('#p-hand').siblings('h4').text(`Player (${pVal} or ${pVal + 10}):`);
+                        }
+                    else{
+                        $('#p-hand').siblings('h4').text(`Player (${pVal}):`);
+                    }
+                }
+                else{
+                    $('#p-hand').siblings('h4').text(`Player (${pVal}):`);
+                }
+                $('#d-hand').html(dHand);
+                $('#p-hand').html(pHand);
+                $('#d-hand').siblings('h4').text(`Dealer (${dVal}):`);
+                if(pVal + 10 === 21){
+                    $('#p-hand').siblings('h4').text(`Player (${21}):`);
+                    alert("You won.");
+                    $('#buttons').html("");
+                }
+
+                //PLAYER'S MOVES
+                $('#hit').click(function(){
+                    player.takeCard(bjDeck);
+                    var lastCard = player.hand[player.hand.length-1];
+                    let lastVal = lastCard.value;
+                    if(lastVal > 10){
+                        lastVal = 10;
+                    }
+                    if(pVal + lastVal < 21){
+                        if(pAce){
+                            if(pVal + lastVal + 10 < 21){
+                                pVal += lastVal;
+                                $('#p-hand').siblings('h4').text(`Player (${pVal} or ${pVal + 10}):`);
+                            }
+                            else if(pVal + lastVal + 10 > 21){
+                                pVal += lastVal;
+                                $('#p-hand').siblings('h4').text(`Player (${pVal}):`);
+                            }
+                            else{
+                                $('#p-hand').siblings('h4').text(`Player (${21}):`);
+                                alert("You won.");
+                                $('#buttons').html("");
+                            }
+                        }
+                        else{
+                            pVal += lastVal;
+                            $('#p-hand').siblings('h4').text(`Player (${pVal}):`);
+                        }
+                        pHand +=`<img src=\"cards/${lastCard.suit[0].toLowerCase() + lastCard.value}.png\">`;
+                        $('#p-hand').html(pHand);
+                        
+                    }
+                    else if(pVal + lastCard.value > 21){
+                        pVal += lastCard.value;
+                        pHand +=`<img src=\"cards/${lastCard.suit[0].toLowerCase() + lastCard.value}.png\">`;
+                        $('#p-hand').html(pHand);
+                        $('#p-hand').siblings('h4').text(`Player (${pVal}):`);
+                        alert("You lost.");
+                        $('#buttons').html("");
+                    }
+                    else{
+                        pVal += lastVal;
+                        $('#p-hand').siblings('h4').text(`Player (${pVal}):`);
+                        pHand +=`<img src=\"cards/${lastCard.suit[0].toLowerCase() + lastCard.value}.png\">`;
+                        $('#p-hand').html(pHand);
+                        alert("You won.");
+                        $('#buttons').html("");
+                    }
+                });
+
+                //DEALER MOVE
+                $('#stand').click(function(){
+                    alert("NEEDS DEALER LOGIC.");
+                });
+
+            }
+            $('#newgame').click(function(){
+                $('#buttons').html("<button id=\"hit\" class=\"btn btn-secondary mt-2 mr-1\">Hit</button><button id=\"stand\" class=\"btn btn-dark mt-2 mr-1\">Stand</button>");
+                Game();
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div class="container text-center mb-5">
+        <h1 class="display-2">Blackjack</h1>
+        <div class="row">
+            <div class="col">
+                <h4></h4>
+                <div id="d-hand">
+
+                </div>
+            </div>
+            <div class="col">
+            </div>
+            <div class="w-100 my-5"></div>
+            <div class="col">
+                <h4></h4>
+                <div id="p-hand"></div>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+        <div id="buttons">
+        </div>
+        <button class="btn btn-primary mt-2" id="newgame">New Game</button>
+    </div>
+</body>
+</html>

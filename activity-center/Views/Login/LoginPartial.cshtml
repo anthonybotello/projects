@@ -1,0 +1,14 @@
+@model LoginUser
+
+<form asp-controller="Login" asp-action="Login" class="form-signin d-inline-block align-middle ml-5" method="post" novalidate>
+    <h1 class="h3 mb-2 font-weight-normal text-center">Login</h1>
+    
+    <div class="invalid-feedback d-block"><span asp-validation-for="LoginEmail"></span></div>
+    <div class="invalid-feedback d-block mb-2"><span asp-validation-for="LoginPassword"></span></div>
+
+    <input asp-for="LoginEmail" class="form-control" placeholder="Email address" required>
+
+    <input asp-for="LoginPassword" class="form-control rounded-bottom" placeholder="Password" required>
+    
+    <button class="btn btn-lg btn-primary btn-block" id='loginsubmit' type="submit">Log In</button>
+</form>

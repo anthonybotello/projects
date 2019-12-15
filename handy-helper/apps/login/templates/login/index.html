@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <title>Login & Registration</title>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+    {% load static %}
+    <link rel='stylesheet' href="{% static 'login/css/bootstrap.css' %}">
+    <link rel='stylesheet' href="{% static 'login/css/signin.css' %}">
+
+</head>
+
+<body class="text-center">
+
+    <form action="{% url 'login:register'  %}" class="form-signin" method="post" novalidate> 
+        {% csrf_token %}
+        <h1 class="h3 mb-3 font-weight-normal">Registration</h1>
+        <div class="invalid-feedback">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                {% if "register" in message.tags %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <label for="inputFirstName" class="sr-only">First Name</label>
+        <input type="text" name='first_name' class="form-control" id="inputFirstName" placeholder="First Name" required>
+        
+        <label for="inputLastName" class="sr-only">Last Name</label>
+        <input type="text" name='last_name' id="inputLastName" class="form-control" placeholder="Last Name" required>
+        
+        <label for="regEmail" class="sr-only">Email Address</label>
+        <input type="email" name='email' id="regEmail" class="form-control" placeholder="Email Address" required>
+        
+        <label for="regPassword" class="sr-only">Password</label>
+        <input type="password" name='password' id="regPassword" class="form-control" placeholder="Password" required>
+        
+        <label for="regConfirmPassword" class="sr-only">Confirm Password</label>
+        <input type="password" name='confirm_password' id="regConfirmPassword" class="form-control" placeholder="Confirm Password" required>
+        
+        <button class="btn btn-lg btn-primary btn-block" id = 'regsubmit' type="submit">Register</button>
+    </form>
+
+    <form action="{% url 'login:login' %}" class="form-signin needs-validation" method="post" novalidate>
+        {% csrf_token %}
+        <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+        <div class="invalid-feedback">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                {% if "login" in message.tags %}
+                    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endif %}
+                {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" name='email' id="inputEmail" class="form-control" placeholder="Email address" required>
+        
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" name='password' id="inputPassword" class="form-control" placeholder="Password" required>
+        
+        <button class="btn btn-lg btn-primary btn-block" id='loginsubmit' type="submit">Log In</button>
+    </form>
+
+</body>
+</html>    

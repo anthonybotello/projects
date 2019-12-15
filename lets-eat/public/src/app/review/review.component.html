@@ -1,0 +1,51 @@
+<h3>New Review</h3>
+<p class="invalid-feedback d-block" *ngIf="errors">{{errors.name.message}}</p>
+<p class="invalid-feedback d-block" *ngIf="errors">{{errors.stars.message}}</p>
+<p class="invalid-feedback d-block" *ngIf="errors">{{errors.content.message}}</p>
+<form [formGroup]="reviewForm" (ngSubmit)="onSubmit(reviewForm.value)">
+    <div class="form-group">
+        <input type="text" class="form-control" formControlName="name" placeholder="Name" required>
+        <div *ngIf="name.invalid && (name.dirty || name.touched) && name.value.trim() != ''" class="alert alert-danger">
+            <div *ngIf="name.errors.required">
+                Name is required.
+            </div>
+            <div *ngIf="name.errors.minlength">
+                Name must be at least 3 characters long.
+            </div>
+        </div>
+        <div *ngIf="name.value && (name.value.length > 0 && name.value.trim() === '') && (name.dirty || name.touched)" class="alert alert-danger">
+                Name is required.
+        </div>
+    </div>
+    <div class="form-group">
+        <select formControlName="stars" class="form-control">
+            <option value="" [disabled]="true" [selected]="true">Rating</option>
+            <option value="1">1 star</option>
+            <option value="2">2 stars</option>
+            <option value="3">3 stars</option>
+            <option value="4">4 stars</option>
+            <option value="5">5 stars</option>
+        </select>
+        <div *ngIf="stars.invalid && (stars.dirty || stars.touched)" class="alert alert-danger">
+            <div *ngIf="stars.errors.required">
+                Rating is required.
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" formControlName="content" placeholder="Review" rows="3" required></textarea>
+        <div *ngIf="content.invalid && (content.dirty || content.touched) && content.value.trim() != ''" class="alert alert-danger">
+            <div *ngIf="content.errors.required">
+                Review cannot be blank.
+            </div>
+            <div *ngIf="content.errors.minlength">
+                Review must be at least 3 characters long.
+            </div>
+        </div>
+        <div *ngIf="content.value && (content.value.length > 0 && content.value.trim() === '') && (content.dirty || content.touched)" class="alert alert-danger">
+                Review cannot be blank.
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="reviewForm.invalid || name.value.trim() === '' || content.value.trim() === ''">Submit</button>
+    <button class="btn btn-secondary ml-1" [routerLink]="['/restaurants/'+resid]">Cancel</button>
+</form>

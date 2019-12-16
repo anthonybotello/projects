@@ -38,6 +38,11 @@ def login(request):
         request.session['logged_in'] = True
         return redirect(reverse('login:dashboard'))
 
+def guest(request):
+    request.session['guest'] = True
+    request.session['logged_in'] = True
+    return redirect(reverse('login:dashboard'))
+
 def logout(request):
     request.session.clear()
     print(request.session)
@@ -45,7 +50,10 @@ def logout(request):
 
 def dashboard(request):
     if 'logged_in' in request.session:
-        user = User.objects.get(id=int(request.session['user_id']))
+        if 'guest' in request.session:
+            user = User.objects.get(email = 'guest@email.com')
+        else:
+            user = User.objects.get(id=int(request.session['user_id']))
         context = {
             'first_name': user.first_name,
             'jobs': Job.objects.all(),

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "/mnt/c/Users/Anthony/Desktop/projects/activity-center/Belt_Exam.csproj": {}
+    "/var/www/activity-center/Belt_Exam.csproj": {}
   },
   "projects": {
-    "/mnt/c/Users/Anthony/Desktop/projects/activity-center/Belt_Exam.csproj": {
+    "/var/www/activity-center/Belt_Exam.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/mnt/c/Users/Anthony/Desktop/projects/activity-center/Belt_Exam.csproj",
+        "projectUniqueName": "/var/www/activity-center/Belt_Exam.csproj",
         "projectName": "Belt_Exam",
-        "projectPath": "/mnt/c/Users/Anthony/Desktop/projects/activity-center/Belt_Exam.csproj",
-        "packagesPath": "/home/anthony/.nuget/packages/",
-        "outputPath": "/mnt/c/Users/Anthony/Desktop/projects/activity-center/obj/",
+        "projectPath": "/var/www/activity-center/Belt_Exam.csproj",
+        "packagesPath": "/home/ubuntu/.nuget/packages/",
+        "outputPath": "/var/www/activity-center/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/share/dotnet/sdk/NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "/home/anthony/.nuget/NuGet/NuGet.Config"
+          "/home/ubuntu/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp2.2"

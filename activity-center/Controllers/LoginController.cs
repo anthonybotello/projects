@@ -100,7 +100,7 @@ namespace Belt_Exam.Controllers
             }
         }
 
-        [HttpPost("guest")]
+        [HttpGet("guest")]
         public IActionResult Guest(){
             User guest = dbContext.Users.FirstOrDefault(user => user.Email == "guest@email.com");
             HttpContext.Session.SetObjectAsJson("CurrentUser",guest);

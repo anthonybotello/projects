@@ -25,7 +25,7 @@ SECRET_KEY = '&l5-q!u_8=3b*4tn2$g3cl&8m7hd==3_wvl0@o3-!4o!qi_*^w'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['3.134.96.112']
+ALLOWED_HOSTS = ['hh.anthonybotello.com']
 
 
 # Application definition

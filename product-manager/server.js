@@ -8,4 +8,4 @@ require('./settings')(app);
 require('./routes')(app);
 
 //Port Number
-app.listen(8000);
+app.listen(5002);

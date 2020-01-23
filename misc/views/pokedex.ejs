@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gotta Catch'em All</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"\>
+        <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('#pokemon img').click(function(){
+                    $.get(`https://pokeapi.co/api/v2/pokemon/${this.id}/`, function(res) {
+                        $('#name').text(res.name.replace(res.name[0],res.name[0].toUpperCase()));
+                        $('#sprite').attr("src",res.sprites.front_default);
+                        $('#back-sprite').attr("src",res.sprites.back_default);
+                        $('#height').text(res.height/10 + " m");
+                        $('#weight').text(res.weight/10 + " kg");
+                        var html_str = "";
+                        for(var i = 0; i < res.types.length; i++) {
+                            let _name = res.types[i].type.name;
+                            _name = _name.replace(_name[0],_name[0].toUpperCase());
+                            html_str += "<li>" + _name + "</li>";
+                        }
+                        $('#types').html(html_str);
+                        $('#dex-content').show();
+                    }, "json");
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container my-5 overflow-auto">
+            <div id="pokemon" class="align-top d-inline-block w-75">
+                <script>
+                    for(var i = 1; i <= 251; i++)
+                    {
+                        $('#pokemon').append(`<img id=\"${i}\" src=\"http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png\">`);
+                    }    
+                </script>
+            </div>
+            <div id="pokedex" class="align-top bg-danger d-inline-block position-fixed" style="width: 15rem; height: 70%;">
+                <div class="bg-white m-3 pt-4" style="height: 93.5%">
+                    <div id="dex-content">
+                        <div class="text-center">
+                            <h2 class="font-weight-bold" id="name"></h2>
+                            <img src="" id="sprite">
+                            <img src=""  id="back-sprite">
+                        </div>
+                      
+                        <div class="ml-4">
+                            <h6 class="font-weight-bold">Types</h6>
+                            <ul id="types">
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <h6 class="font-weight-bold">Height</h6>
+                                <p id="height" class="p-0 m-0"></p>
+                            <h6 class="font-weight-bold">Weight</h6>
+                                <p id="weight" class="p-0 m-0"></p>
+                        </div>
+                        <div class="text-center"></div>
+                        <script>
+                            $('#dex-content').hide();
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

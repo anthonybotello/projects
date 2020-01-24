@@ -1,5 +1,5 @@
 {
-  "FilePath": "c:\\Users\\Anthony\\Desktop\\c#\\Belt_Exam\\Belt_Exam.csproj",
+  "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Belt_Exam.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2956,98 +2956,98 @@
         }
       }
     ],
-    "CSharpLanguageVersion": 800
+    "CSharpLanguageVersion": 703
   },
   "RootNamespace": "Belt_Exam",
   "Documents": [
     {
-      "FilePath": "Views\\Shared\\Error.cshtml",
-      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Home/Details.cshtml",
+      "TargetPath": "Views/Home/Details.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Home\\Create.cshtml",
-      "TargetPath": "Views\\Home\\Create.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/_ViewStart.cshtml",
+      "TargetPath": "Views/_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Home\\Index.cshtml",
-      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Home/Delete.cshtml",
+      "TargetPath": "Views/Home/Delete.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Login/Index.cshtml",
+      "TargetPath": "Views/Login/Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Login\\RegisterPartial.cshtml",
-      "TargetPath": "Views\\Login\\RegisterPartial.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Shared/_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views/Shared/_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/_ViewImports.cshtml",
+      "TargetPath": "Views/_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Login\\_LoginLayout.cshtml",
-      "TargetPath": "Views\\Login\\_LoginLayout.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Home/Create.cshtml",
+      "TargetPath": "Views/Home/Create.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Login\\Index.cshtml",
-      "TargetPath": "Views\\Login\\Index.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Login/Success.cshtml",
+      "TargetPath": "Views/Login/Success.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Login\\Success.cshtml",
-      "TargetPath": "Views\\Login\\Success.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Login/RegisterPartial.cshtml",
+      "TargetPath": "Views/Login/RegisterPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Shared\\_CookieConsentPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_CookieConsentPartial.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Login/_ViewStart.cshtml",
+      "TargetPath": "Views/Login/_ViewStart.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Login\\_ViewStart.cshtml",
-      "TargetPath": "Views\\Login\\_ViewStart.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Shared/Error.cshtml",
+      "TargetPath": "Views/Shared/Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Home\\Delete.cshtml",
-      "TargetPath": "Views\\Home\\Delete.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Home/Privacy.cshtml",
+      "TargetPath": "Views/Home/Privacy.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Shared\\_Layout.cshtml",
-      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Shared/_Layout.cshtml",
+      "TargetPath": "Views/Shared/_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Home/Index.cshtml",
+      "TargetPath": "Views/Home/Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Home\\Edit.cshtml",
-      "TargetPath": "Views\\Home\\Edit.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Shared/_CookieConsentPartial.cshtml",
+      "TargetPath": "Views/Shared/_CookieConsentPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Login/_LoginLayout.cshtml",
+      "TargetPath": "Views/Login/_LoginLayout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Login\\LoginPartial.cshtml",
-      "TargetPath": "Views\\Login\\LoginPartial.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Login/LoginPartial.cshtml",
+      "TargetPath": "Views/Login/LoginPartial.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "Views\\Home\\Details.cshtml",
-      "TargetPath": "Views\\Home\\Details.cshtml",
+      "FilePath": "/mnt/c/Users/Anthony/Desktop/Coding/projects/activity-center/Views/Home/Edit.cshtml",
+      "TargetPath": "Views/Home/Edit.cshtml",
       "FileKind": "mvc"
     }
   ],

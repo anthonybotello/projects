@@ -11,6 +11,10 @@
 </head>
 
 <body class="text-center justify-content-center">
+    <div class="header">
+        <h1 class="display-4 text-center pb-5">Handy Helper</h1>
+    </div>
+
     <form action="{% url 'login:register'  %}" class="form-signin" method="post" novalidate> 
         {% csrf_token %}
         <h1 class="h3 mb-3 font-weight-normal">Registration</h1>

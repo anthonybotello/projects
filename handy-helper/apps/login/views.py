@@ -52,6 +52,7 @@ def dashboard(request):
     if 'logged_in' in request.session:
         if 'guest' in request.session:
             user = User.objects.get(email = 'guest@email.com')
+            request.session['user_id'] = user.id
         else:
             user = User.objects.get(id=int(request.session['user_id']))
         context = {

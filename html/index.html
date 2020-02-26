@@ -1,35 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Home</title>
-<style>
-    body {
-        width: 35em;
-        margin: 0 auto;
-        font-family: Tahoma, Verdana, Arial, sans-serif;
-    }
-</style>
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"\>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>Home page under construction...</h1>
-<div>
-    <h3>Projects</h3>
-    <ul>
-        <li><a href="https://le.anthonybotello.com">Let's Eat (MEAN)</a></li>
-        <li><a href="https://pm.anthonybotello.com">Product Manager (MEAN)</a></li>
-        <li><a href="https://ac.anthonybotello.com">Activity Center (ASP.NET Core)</a></li>
-        <li><a href="https://hh.anthonybotello.com">Handy Helper (Django)</a></li>
-        <li><a href="https://misc.anthonybotello.com/blackjack">Blackjack</a></li>
-        <li><a href="https://misc.anthonybotello.com/pokedex">Pokedex</a></li>
-        <li><a href="https://misc.anthonybotello.com/trivia">Trivia</a></li>
-    </ul>
-</div>
-
-<div style="margin-bottom: 200px;">
-    <div>
-        <h3>Resume</h3>
-        <embed src="anthony-botello-resume.pdf" type="application/pdf" width="800px" height="800px">
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+        <h1 class="display-4 pt-2">Projects</h1>
+        <div class="row mt-4">
+            <div class="col-4">
+              <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" id="list-lets-eat-list" data-toggle="list" href="#list-lets-eat" role="tab" aria-controls="lets-eat">Let's Eat</a>
+                <a class="list-group-item list-group-item-action" id="list-profile-list" data-toggle="list" href="#list-product-manager" role="tab" aria-controls="product-manager">Product Manager</a>
+                <a class="list-group-item list-group-item-action" id="list-activity-center-list" data-toggle="list" href="#list-activity-center" role="tab" aria-controls="activity-center">Activity Center</a>
+                <a class="list-group-item list-group-item-action" id="list-handy-helper-list" data-toggle="list" href="#list-handy-helper" role="tab" aria-controls="handy-helper">Handy Helper</a>
+              </div>
+            </div>
+            <div class="col-8">
+              <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="list-lets-eat" role="tabpanel" aria-labelledby="list-lets-eat-list">
+                  <p class="mb-1">
+                    <a href="https://le.anthonybotello.com/"><i>Let's Eat</i></a> is a full stack <a href="https://en.wikipedia.org/wiki/MEAN_(solution_stack)">MEAN</a> <a href="https://en.wikipedia.org/wiki/Model-view-controller">MVC</a> application where users can read or create restaurant reviews. The front end functionality is built using <a href="https://en.wikipedia.org/wiki/Angular_(web_framework)">Angular</a>, written in TypeScript, while the styling is done using <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)">Bootstrap</a>. The back end logic is written in JavaScript using the <a href="https://en.wikipedia.org/wiki/Express.js">Express</a> framework and the <a href="https://en.wikipedia.org/wiki/MongoDB">MongoDB</a> non-relational database. The application implements a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>ful API interface between the client and the database and utilizes both front end and back end validations to preserve the integrity of the data. It is deployed on an Ubuntu 18.04 Azure Virtual Machine. HTTP requests to the application site are routed by an <a href="https://en.wikipedia.org/wiki/Nginx">Nginx</a> web server to a <a href="https://en.wikipedia.org/wiki/Node.js">Node.js</a> server that interfaces directly with the application.
+                  </p> 
+                  <div>
+                    <p class="mb-1"><u>Technologies used:</u></p>
+                    <ul class="mt-1 list-group list-group-horizontal-sm">
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>Angular</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>Express</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>MongoDB</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>Node.js</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>Azure VM</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>Nginx</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>Bootstrap</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>JavaScript</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>TypeScript</b></li>
+                    </ul>
+                  </div>
+                  <a href="https://github.com/anthonybotello/projects/tree/master/lets-eat" class="ml-2">Code</a>
+                </div>
+                <div class="tab-pane fade" id="list-product-manager" role="tabpanel" aria-labelledby="list-product-manager-list">
+                  <p class="mb-1">
+                    <a href="https://pm.anthonybotello.com/"><i>Product Manager</i></a> is a full stack <a href="https://en.wikipedia.org/wiki/MEAN_(solution_stack)">MEAN</a> <a href="https://en.wikipedia.org/wiki/Model-view-controller">MVC</a> application for listing product information. The front end functionality is built using <a href="https://en.wikipedia.org/wiki/Angular_(web_framework)">Angular</a>, written in TypeScript, while the styling is done using <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)">Bootstrap</a>. The back end logic is written in JavaScript using the <a href="https://en.wikipedia.org/wiki/Express.js">Express</a> framework and the <a href="https://en.wikipedia.org/wiki/MongoDB">MongoDB</a> non-relational database. The application implements a <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a>ful API interface between the client and the database and utilizes both front end and back end validations to preserve the integrity of the data. It is deployed on an Ubuntu 18.04 Azure Virtual Machine. HTTP requests to the application site are routed by an <a href="https://en.wikipedia.org/wiki/Nginx">Nginx</a> web server to a <a href="https://en.wikipedia.org/wiki/Node.js">Node.js</a> server that interfaces directly with the application.
+                  </p> 
+                  <p class="mb-1"><u>Technologies used:</u></p>
+                  <ul class="mt-1 list-group list-group-horizontal-sm">
+                    <li class="px-2 list-group-item border-0" id="tech-list"><b>Angular</b></li>
+                    <li class="px-2 list-group-item border-0" id="tech-list"><b>Express</b></li>
+                    <li class="px-2 list-group-item border-0" id="tech-list"><b>MongoDB</b></li>
+                    <li class="px-2 list-group-item border-0" id="tech-list"><b>Node.js</b></li>
+                    <li class="px-2 list-group-item border-0" id="tech-list"><b>Azure VM</b></li>
+                    <li class="px-2 list-group-item border-0" id="tech-list"><b>Nginx</b></li>
+                    <li class="px-2 list-group-item border-0" id="tech-list"><b>Bootstrap</b></li>
+                    <li class="px-2 list-group-item border-0" id="tech-list"><b>JavaScript</b></li>
+                    <li class="px-2 list-group-item border-0" id="tech-list"><b>TypeScript</b></li>
+                  </ul>
+                  <a href="https://github.com/anthonybotello/projects/tree/master/product-manager" class="ml-2">Code</a>
+                </div>
+                <div class="tab-pane fade" id="list-activity-center" role="tabpanel" aria-labelledby="list-activity-center-list"><p class="mb-1">
+                  <a href="https://ac.anthonybotello.com/"><i>Activity Center</i></a> is a full stack <a href="https://en.wikipedia.org/wiki/ASP.NET_Core">ASP.NET Core</a> <a href="https://en.wikipedia.org/wiki/Model-view-controller">MVC</a> application where users can list or sign up to participate in community events and activities. The front end component is built using HTML, CSS and <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)">Bootstrap</a>. The back end logic is written in C# using <a href="https://docs.microsoft.com/en-us/ef/">Entity Framework Core</a> to interface with the <a href="https://en.wikipedia.org/wiki/MySQL">MySQL</a> database. The application uses back-end validations to preserve the integrity of the data being stored in the database. It is deployed on an Ubuntu 18.04 Azure Virtual Machine. HTTP requests to the application site are routed by an <a href="https://en.wikipedia.org/wiki/Nginx">Nginx</a> web server to a Kestrel server that's included with the ASP.NET core framework and interfaces with the application.
+                </p> 
+                <p class="mb-1"><u>Technologies used:</u></p>
+                <ul class="mt-1 list-group list-group-horizontal-sm">
+                  <li class="px-2 list-group-item border-0" id="tech-list"><b>ASP.NET Core</b></li>
+                  <li class="px-2 list-group-item border-0" id="tech-list"><b>Entity Framework Core</b></li>
+                  <li class="px-2 list-group-item border-0" id="tech-list"><b>MySQL</b></li>
+                  <li class="px-2 list-group-item border-0" id="tech-list"><b>Azure VM</b></li>
+                  <li class="px-2 list-group-item border-0" id="tech-list"><b>Nginx</b></li>
+                  <li class="px-2 list-group-item border-0" id="tech-list"><b>Bootstrap</b></li>
+                  <li class="px-2 list-group-item border-0" id="tech-list"><b>C#</b></li>
+                  <li class="px-2 list-group-item border-0" id="tech-list"><b>HTML</b></li>
+                  <li class="px-2 list-group-item border-0" id="tech-list"><b>CSS</b></li>
+                </ul>
+                <a href="https://github.com/anthonybotello/projects/tree/master/activity-center" class="ml-2">Code</a></div>
+                <div class="tab-pane fade" id="list-handy-helper" role="tabpanel" aria-labelledby="list-handy-helper-list">
+                  <p class="mb-1">
+                    <a href="https://hh.anthonybotello.com/"><i>Handy Helper</i></a> is a full stack <a href="https://en.wikipedia.org/wiki/Django_(web_framework)">Django</a> MTV (<a href="https://en.wikipedia.org/wiki/Model-view-controller">MVC</a>) job board application where users can list jobs or accept jobs that have been listed. The front end functionality is built using HTML, CSS, and <a href="https://en.wikipedia.org/wiki/Bootstrap_(front-end_framework)">Bootstrap</a>. The back end logic is written in Python and uses the <a href="https://en.wikipedia.org/wiki/SQLite">SQLite</a> database. It is deployed on an Ubuntu 18.04 Azure Virtual Machine. HTTP requests to the application site are routed by an <a href="https://en.wikipedia.org/wiki/Nginx">Nginx</a> web server to a <a href="https://en.wikipedia.org/wiki/Gunicorn">Gunicorn</a> server that interfaces directly with the application.
+                  </p> 
+                  <div>
+                    <p class="mb-1"><u>Technologies used:</u></p>
+                    <ul class="mt-1 list-group list-group-horizontal-sm">
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>Django</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>SQLite</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>Azure VM</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>Nginx</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>Bootstrap</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>Python</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>HTML</b></li>
+                      <li class="px-2 list-group-item border-0" id="tech-list"><b>CSS</b></li>
+                    </ul>
+                  </div>
+                  <a href="https://github.com/anthonybotello/projects/tree/master/handy-helper" class="ml-2">Code</a>
+                </div>
+              </div>
+            </div>
+          </div>
     </div>
-</div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

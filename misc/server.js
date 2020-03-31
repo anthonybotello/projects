@@ -17,6 +17,9 @@ app.get('/trivia',(req,res)=>{
 app.get('/blackjack',(req,res)=>{
     res.render('blackjack');
 });
+app.get('/bubbles/', (req, res) => {
+    res.render('bubbles');
+});
 
 //Port Number
 app.listen(5005);
